@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VERAÉ | Skin, After Rain</title>
+
+    <meta
+        name="description"
+        content="A fresh botanical skincare experience inspired by rain, dew and morning light."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     ATMOSPHERE
+========================================================= -->
+
+<div class="rain" id="rain"></div>
+<div class="droplets" id="droplets"></div>
+<div class="ambient-glow"></div>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="navbar">
+
+    <a href="#" class="logo">VERAÉ</a>
+
+    <nav>
+        <a href="#shop">Shop</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#ingredients">Ingredients</a>
+    </nav>
+
+    <button class="bag-button" aria-label="Shopping bag">
+        Bag <span id="bagCount">0</span>
+    </button>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<main>
+
+<section class="hero">
+
+    <div class="hero-botanical botanical-left">
+        <span class="stem"></span>
+
+        <span class="petal p1"></span>
+        <span class="petal p2"></span>
+        <span class="petal p3"></span>
+        <span class="petal p4"></span>
+        <span class="petal p5"></span>
+
+        <span class="dew dew-one"></span>
+    </div>
+
+
+    <div class="hero-content">
+
+        <p class="eyebrow">BOTANICAL SKINCARE · 01</p>
+
+        <h1>
+            Skin,
+            <em>after rain.</em>
+        </h1>
+
+        <p class="hero-description">
+            Weightless formulas inspired by the quiet freshness
+            of a garden just after rainfall.
+        </p>
+
+        <a href="#shop" class="primary-button">
+            Discover the collection
+            <span>↗</span>
+        </a>
+
+    </div>
+
+
+    <!-- Hero product -->
+
+    <div class="hero-product">
+
+        <div class="product-shadow"></div>
+
+        <div class="product-bottle hero-bottle">
+
+            <div class="bottle-shine"></div>
+
+            <div class="bottle-cap"></div>
+
+            <div class="bottle-label">
+                <small>VERAÉ</small>
+                <strong>DEW</strong>
+                <span>HYDRATING SERUM</span>
+            </div>
+
+            <span class="condensation c1"></span>
+            <span class="condensation c2"></span>
+            <span class="condensation c3"></span>
+            <span class="condensation c4"></span>
+
+        </div>
+
+        <div class="falling-product-drop"></div>
+
+    </div>
+
+
+    <div class="hero-botanical botanical-right">
+
+        <span class="leaf leaf-a"></span>
+        <span class="leaf leaf-b"></span>
+        <span class="leaf leaf-c"></span>
+
+        <span class="dew dew-two"></span>
+
+    </div>
+
+
+    <div class="scroll-indicator">
+        <span></span>
+        Scroll to explore
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="intro" id="philosophy">
+
+    <div class="intro-water"></div>
+
+    <p class="eyebrow">THE RITUAL</p>
+
+    <h2>
+        Your skin doesn't need
+        <em>more noise.</em>
+    </h2>
+
+    <p class="intro-text">
+        It needs water. Air. Botanical calm.
+        A moment to breathe.
+    </p>
+
+</section>
+
+
+
+<!-- =========================================================
+     COLLECTION
+========================================================= -->
+
+<section class="collection" id="shop">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow">THE COLLECTION</p>
+
+            <h2>
+                Freshly
+                <em>made.</em>
+            </h2>
+        </div>
+
+        <p>
+            Three uncomplicated formulas.
+            One quiet ritual.
+        </p>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <!-- PRODUCT 1 -->
+
+        <article class="product-card" data-product="Dew Serum">
+
+            <div class="product-visual">
+
+                <div class="mini-flower flower-one">
+                    <i></i><i></i><i></i><i></i>
+                </div>
+
+                <div class="mini-product serum">
+
+                    <div class="mini-cap"></div>
+
+                    <div class="mini-label">
+                        <small>VERAÉ</small>
+                        DEW
+                    </div>
+
+                    <span class="mini-drop"></span>
+
+                </div>
+
+                <div class="water-ring"></div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div>
+                    <h3>Dew Serum</h3>
+                    <p>Hyaluronic hydration</p>
+                </div>
+
+                <strong>$28</strong>
+
+            </div>
+
+            <button class="add-button">
+                Add to ritual +
+            </button>
+
+        </article>
+
+
+
+        <!-- PRODUCT 2 -->
+
+        <article class="product-card" data-product="Cloud Cleanser">
+
+            <div class="product-visual cleanser-bg">
+
+                <div class="mini-product cleanser">
+
+                    <div class="mini-cap"></div>
+
+                    <div class="mini-label">
+                        <small>VERAÉ</small>
+                        CLOUD
+                    </div>
+
+                </div>
+
+                <div class="floating-bubble bubble-a"></div>
+                <div class="floating-bubble bubble-b"></div>
+                <div class="floating-bubble bubble-c"></div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div>
+                    <h3>Cloud Cleanser</h3>
+                    <p>Soft botanical foam</p>
+                </div>
+
+                <strong>$24</strong>
+
+            </div>
+
+            <button class="add-button">
+                Add to ritual +
+            </button>
+
+        </article>
+
+
+
+        <!-- PRODUCT 3 -->
+
+        <article class="product-card" data-product="Rain Cream">
+
+            <div class="product-visual cream-bg">
+
+                <div class="mini-product cream">
+
+                    <div class="cream-lid"></div>
+
+                    <div class="cream-label">
+                        <small>VERAÉ</small>
+                        RAIN
+                    </div>
+
+                </div>
+
+                <div class="cream-flower">
+                    ✿
+                </div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div>
+                    <h3>Rain Cream</h3>
+                    <p>Barrier-softening moisturizer</p>
+                </div>
+
+                <strong>$32</strong>
+
+            </div>
+
+            <button class="add-button">
+                Add to ritual +
+            </button>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BOTANICAL SECTION
+========================================================= -->
+
+<section class="botanical-section">
+
+    <div class="giant-drop"></div>
+
+    <div class="botanical-copy">
+
+        <p class="eyebrow">FROM THE GARDEN</p>
+
+        <h2>
+            Water meets
+            <em>botany.</em>
+        </h2>
+
+        <p>
+            Every formula begins with a simple idea:
+            hydration should feel like hydration.
+        </p>
+
+    </div>
+
+    <div class="floating-leaves">
+
+        <span class="big-leaf leaf-1"></span>
+        <span class="big-leaf leaf-2"></span>
+        <span class="big-leaf leaf-3"></span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INGREDIENTS
+========================================================= -->
+
+<section class="ingredients" id="ingredients">
+
+    <div class="ingredient-intro">
+
+        <p class="eyebrow">THE GOOD STUFF</p>
+
+        <h2>
+            A little
+            <em>closer.</em>
+        </h2>
+
+    </div>
+
+
+    <div class="ingredient-list">
+
+        <div class="ingredient">
+
+            <span class="ingredient-number">01</span>
+
+            <div class="ingredient-visual">
+                💧
+            </div>
+
+            <div>
+                <h3>Hyaluronic Acid</h3>
+                <p>
+                    Draws water toward the skin
+                    for a plump, fresh finish.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="ingredient">
+
+            <span class="ingredient-number">02</span>
+
+            <div class="ingredient-visual">
+                🌿
+            </div>
+
+            <div>
+                <h3>Aloe</h3>
+                <p>
+                    A soothing botanical touch
+                    for skin that wants calm.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="ingredient">
+
+            <span class="ingredient-number">03</span>
+
+            <div class="ingredient-visual">
+                ✿
+            </div>
+
+            <div>
+                <h3>White Tea</h3>
+                <p>
+                    A delicate antioxidant-rich
+                    botanical extract.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="final-cta">
+
+    <div class="final-rain"></div>
+
+    <p class="eyebrow">YOUR SKIN RITUAL</p>
+
+    <h2>
+        Meet your
+        <em>fresh start.</em>
+    </h2>
+
+    <a href="#shop" class="primary-button">
+        Explore skincare
+        <span>↗</span>
+    </a>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        VERAÉ
+    </div>
+
+    <p>
+        Skincare inspired by water,
+        flowers and morning light.
+    </p>
+
+    <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">Contact</a>
+        <a href="#">Shipping</a>
+    </div>
+
+    <small>
+        © 2026 VERAÉ
+    </small>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
