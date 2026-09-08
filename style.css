@@ -1,0 +1,1866 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f7faf5;
+    color: #24332c;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+
+/* =========================================================
+   ATMOSPHERE
+========================================================= */
+
+.ambient-glow {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255,255,255,.9),
+            transparent 35%
+        );
+}
+
+.cursor-glow {
+    position: fixed;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(190,230,220,.16),
+            transparent 65%
+        );
+
+    z-index: 2;
+}
+
+
+
+/* =========================================================
+   RAIN
+========================================================= */
+
+.rain {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 20;
+}
+
+.rain-drop {
+    position: absolute;
+
+    width: 1px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(125,170,160,.32)
+    );
+
+    animation: rainfall linear infinite;
+}
+
+@keyframes rainfall {
+
+    from {
+        transform: translateY(-120px);
+    }
+
+    to {
+        transform: translateY(110vh);
+    }
+
+}
+
+
+
+/* =========================================================
+   FLOATING DROPLETS
+========================================================= */
+
+.droplets {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 19;
+}
+
+.droplet {
+    position: absolute;
+
+    width: 5px;
+    height: 8px;
+
+    border-radius: 70% 70% 60% 60%;
+
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            white,
+            rgba(180,225,218,.35)
+        );
+
+    box-shadow:
+        0 2px 10px rgba(100,160,150,.12);
+
+    animation: floatDrop 7s ease-in-out infinite;
+}
+
+@keyframes floatDrop {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+}
+
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6vw;
+
+    z-index: 100;
+
+    background: rgba(247,250,245,.55);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(50,80,70,.07);
+}
+
+.logo {
+    font-size: 1.15rem;
+
+    letter-spacing: .32em;
+
+    font-weight: 600;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 35px;
+
+    font-size: .78rem;
+
+    letter-spacing: .08em;
+}
+
+.navbar nav a {
+    opacity: .65;
+
+    transition: .3s;
+}
+
+.navbar nav a:hover {
+    opacity: 1;
+}
+
+.bag-button {
+    background: none;
+
+    border: 1px solid rgba(30,50,40,.25);
+
+    border-radius: 100px;
+
+    padding: 9px 17px;
+
+    cursor: pointer;
+
+    font-size: .75rem;
+}
+
+#bagCount {
+    margin-left: 5px;
+}
+
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #ffffff 0%,
+            #eef7f2 50%,
+            #dcece5 100%
+        );
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 10;
+
+    text-align: center;
+
+    max-width: 620px;
+
+    padding: 120px 25px 60px;
+}
+
+.eyebrow {
+    font-size: .65rem;
+
+    letter-spacing: .22em;
+
+    font-weight: 600;
+
+    opacity: .55;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(4rem, 9vw, 8.5rem);
+
+    line-height: .82;
+
+    font-weight: 400;
+
+    letter-spacing: -.055em;
+}
+
+.hero h1 em,
+h2 em {
+    font-weight: 400;
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 350px;
+
+    margin: 35px auto;
+
+    font-size: .9rem;
+
+    line-height: 1.8;
+
+    opacity: .65;
+}
+
+.primary-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 15px 21px;
+
+    background: #263d34;
+
+    color: white;
+
+    border-radius: 100px;
+
+    font-size: .72rem;
+
+    letter-spacing: .05em;
+
+    transition:
+        transform .4s,
+        box-shadow .4s;
+}
+
+.primary-button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(30,60,50,.18);
+}
+
+.primary-button span {
+    font-size: 1rem;
+}
+
+
+
+/* =========================================================
+   HERO PRODUCT
+========================================================= */
+
+.hero-product {
+    position: absolute;
+
+    right: 12%;
+
+    bottom: 12%;
+
+    width: 190px;
+    height: 330px;
+
+    z-index: 8;
+
+    animation: productFloat 5s ease-in-out infinite;
+}
+
+@keyframes productFloat {
+
+    0%,100% {
+        transform: translateY(0) rotate(1deg);
+    }
+
+    50% {
+        transform: translateY(-17px) rotate(-1deg);
+    }
+
+}
+
+.product-shadow {
+    position: absolute;
+
+    width: 160px;
+    height: 35px;
+
+    bottom: -20px;
+    left: 15px;
+
+    border-radius: 50%;
+
+    background: rgba(40,80,65,.15);
+
+    filter: blur(15px);
+}
+
+.product-bottle {
+    position: absolute;
+
+    left: 30px;
+
+    bottom: 0;
+
+    width: 125px;
+    height: 270px;
+
+    border-radius: 23px 23px 28px 28px;
+
+    background:
+        linear-gradient(
+            105deg,
+            rgba(255,255,255,.85),
+            rgba(214,236,229,.75),
+            rgba(255,255,255,.9)
+        );
+
+    border: 1px solid rgba(255,255,255,.8);
+
+    box-shadow:
+        inset -12px 0 25px rgba(120,160,150,.12),
+        20px 30px 45px rgba(60,100,85,.12);
+
+    backdrop-filter: blur(8px);
+
+    overflow: hidden;
+}
+
+.bottle-cap {
+    position: absolute;
+
+    top: -34px;
+    left: 27px;
+
+    width: 71px;
+    height: 40px;
+
+    border-radius: 10px 10px 4px 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e7eee9,
+            #ffffff,
+            #dce7e2
+        );
+
+    box-shadow:
+        0 8px 15px rgba(50,80,70,.08);
+}
+
+.bottle-label {
+    position: absolute;
+
+    top: 100px;
+
+    left: 15px;
+    right: 15px;
+
+    text-align: center;
+
+    color: #557267;
+}
+
+.bottle-label small {
+    display: block;
+
+    font-size: .45rem;
+
+    letter-spacing: .2em;
+
+    margin-bottom: 17px;
+}
+
+.bottle-label strong {
+    display: block;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 2rem;
+
+    font-weight: 400;
+}
+
+.bottle-label span {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: .42rem;
+
+    letter-spacing: .13em;
+}
+
+.bottle-shine {
+    position: absolute;
+
+    width: 20px;
+
+    height: 180px;
+
+    top: 30px;
+    left: 15px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.5);
+
+    filter: blur(5px);
+}
+
+.condensation {
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            white,
+            rgba(150,205,195,.35)
+        );
+}
+
+.c1 {
+    width: 8px;
+    height: 11px;
+    top: 40px;
+    right: 20px;
+}
+
+.c2 {
+    width: 5px;
+    height: 8px;
+    top: 75px;
+    right: 12px;
+}
+
+.c3 {
+    width: 7px;
+    height: 9px;
+    bottom: 60px;
+    left: 18px;
+}
+
+.c4 {
+    width: 4px;
+    height: 6px;
+    bottom: 85px;
+    right: 23px;
+}
+
+.falling-product-drop {
+    position: absolute;
+
+    width: 9px;
+    height: 14px;
+
+    background: rgba(190,225,220,.7);
+
+    border-radius: 60% 60% 65% 65%;
+
+    top: -60px;
+    left: 87px;
+
+    animation: productDrop 3.5s ease-in infinite;
+}
+
+@keyframes productDrop {
+
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(260px);
+        opacity: 0;
+    }
+
+}
+
+
+
+/* =========================================================
+   BOTANICALS
+========================================================= */
+
+.hero-botanical {
+    position: absolute;
+
+    z-index: 4;
+
+    opacity: .72;
+}
+
+.botanical-left {
+    left: -30px;
+
+    bottom: 5%;
+
+    width: 270px;
+    height: 430px;
+
+    transform: rotate(-12deg);
+}
+
+.stem {
+    position: absolute;
+
+    width: 4px;
+
+    height: 420px;
+
+    left: 110px;
+
+    bottom: 0;
+
+    border-radius: 100%;
+
+    background: #92b6a8;
+
+    transform: rotate(8deg);
+}
+
+.petal {
+    position: absolute;
+
+    width: 70px;
+    height: 110px;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #fff,
+            #e9dfe8
+        );
+
+    border-radius: 70% 40% 70% 40%;
+
+    transform-origin: bottom center;
+}
+
+.p1 {
+    left: 70px;
+    top: 60px;
+    transform: rotate(-45deg);
+}
+
+.p2 {
+    left: 110px;
+    top: 50px;
+    transform: rotate(-10deg);
+}
+
+.p3 {
+    left: 140px;
+    top: 70px;
+    transform: rotate(35deg);
+}
+
+.p4 {
+    left: 105px;
+    top: 105px;
+    transform: rotate(70deg);
+}
+
+.p5 {
+    left: 60px;
+    top: 100px;
+    transform: rotate(-80deg);
+}
+
+.dew {
+    position: absolute;
+
+    width: 12px;
+    height: 17px;
+
+    border-radius: 60%;
+
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            white,
+            rgba(130,200,190,.4)
+        );
+
+    box-shadow:
+        0 4px 15px rgba(70,130,115,.15);
+
+    animation: dewMove 4s ease-in-out infinite;
+}
+
+.dew-one {
+    top: 120px;
+    left: 118px;
+}
+
+@keyframes dewMove {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(12px);
+    }
+
+}
+
+.botanical-right {
+    right: -30px;
+
+    bottom: 8%;
+
+    width: 250px;
+    height: 400px;
+
+    transform: rotate(18deg);
+}
+
+.leaf {
+    position: absolute;
+
+    width: 120px;
+    height: 55px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #8fb6a5,
+            #c4dacf
+        );
+
+    border-radius: 100% 0 100% 0;
+
+    transform: rotate(-30deg);
+}
+
+.leaf-a {
+    top: 80px;
+    left: 60px;
+}
+
+.leaf-b {
+    top: 150px;
+    left: 10px;
+    transform: rotate(30deg);
+}
+
+.leaf-c {
+    top: 220px;
+    left: 80px;
+}
+
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.scroll-indicator {
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: .62rem;
+
+    letter-spacing: .12em;
+
+    opacity: .5;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.scroll-indicator span {
+    width: 1px;
+
+    height: 35px;
+
+    background: currentColor;
+}
+
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    min-height: 75vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            #f7faf5,
+            #eef7f2
+        );
+}
+
+.intro h2 {
+    max-width: 800px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3rem, 7vw, 7rem);
+
+    font-weight: 400;
+
+    line-height: .9;
+
+    letter-spacing: -.04em;
+}
+
+.intro-text {
+    max-width: 420px;
+
+    margin-top: 35px;
+
+    line-height: 1.8;
+
+    opacity: .6;
+}
+
+.intro-water {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(180,220,210,.18),
+            transparent 65%
+        );
+
+    filter: blur(15px);
+}
+
+
+
+/* =========================================================
+   COLLECTION
+========================================================= */
+
+.collection {
+    padding: 140px 7vw;
+
+    background: #f8faf7;
+}
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 70px;
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+
+    font-weight: 400;
+
+    line-height: .9;
+}
+
+.section-heading > p {
+    max-width: 230px;
+
+    line-height: 1.7;
+
+    font-size: .8rem;
+
+    opacity: .55;
+}
+
+.products {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.product-card {
+    cursor: pointer;
+}
+
+.product-visual {
+    height: 520px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            white,
+            #e5f0eb
+        );
+
+    transition:
+        transform .6s ease;
+}
+
+.product-card:hover .product-visual {
+    transform: translateY(-8px);
+}
+
+.product-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: start;
+
+    padding: 20px 0 12px;
+}
+
+.product-info h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.5rem;
+
+    font-weight: 400;
+}
+
+.product-info p {
+    font-size: .72rem;
+
+    opacity: .5;
+
+    margin-top: 5px;
+}
+
+.product-info strong {
+    font-size: .75rem;
+}
+
+.add-button {
+    width: 100%;
+
+    padding: 13px;
+
+    background: transparent;
+
+    border: 1px solid rgba(30,50,40,.18);
+
+    border-radius: 100px;
+
+    cursor: pointer;
+
+    font-size: .68rem;
+
+    transition: .3s;
+}
+
+.add-button:hover {
+    background: #263d34;
+
+    color: white;
+}
+
+
+
+/* =========================================================
+   MINI PRODUCTS
+========================================================= */
+
+.mini-product {
+    position: relative;
+
+    z-index: 4;
+
+    box-shadow:
+        15px 25px 45px rgba(50,90,75,.12);
+
+    transition: transform .6s ease;
+}
+
+.product-card:hover .mini-product {
+    transform:
+        translateY(-12px)
+        rotate(2deg);
+}
+
+.serum {
+    width: 145px;
+    height: 290px;
+
+    border-radius: 24px 24px 28px 28px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #d9eee8,
+            #ffffff,
+            #d0e6df
+        );
+}
+
+.cleanser {
+    width: 180px;
+    height: 230px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #f2e5ef,
+            #fff,
+            #e9dce9
+        );
+}
+
+.cream {
+    width: 220px;
+    height: 120px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #dce8f2,
+            #fff,
+            #d8e4ee
+        );
+}
+
+.mini-cap {
+    position: absolute;
+
+    top: -32px;
+
+    left: 35px;
+
+    width: 110px;
+    height: 35px;
+
+    border-radius: 8px 8px 3px 3px;
+
+    background: #e8efeb;
+}
+
+.mini-label {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 2rem;
+
+    color: #587469;
+}
+
+.mini-label small {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: .45rem;
+
+    letter-spacing: .2em;
+
+    margin-bottom: 15px;
+}
+
+.mini-drop {
+    position: absolute;
+
+    width: 12px;
+    height: 18px;
+
+    border-radius: 60%;
+
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            white,
+            rgba(120,190,180,.45)
+        );
+
+    right: 20px;
+
+    top: 50px;
+}
+
+.cream-lid {
+    position: absolute;
+
+    width: 220px;
+    height: 35px;
+
+    left: 0;
+    top: -15px;
+
+    border-radius: 50%;
+
+    background: #edf3f5;
+}
+
+.cream-label {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 2rem;
+
+    color: #657e91;
+}
+
+.cream-label small {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: .45rem;
+
+    letter-spacing: .2em;
+
+    margin-bottom: 8px;
+}
+
+
+
+/* =========================================================
+   FLOWERS + BUBBLES
+========================================================= */
+
+.mini-flower {
+    position: absolute;
+
+    left: 40px;
+
+    top: 60px;
+
+    width: 100px;
+
+    height: 100px;
+
+    animation: flowerFloat 6s ease-in-out infinite;
+}
+
+.mini-flower i {
+    position: absolute;
+
+    width: 45px;
+    height: 65px;
+
+    background: #f0e2ed;
+
+    border-radius: 70% 40% 70% 40%;
+
+    left: 30px;
+    top: 20px;
+}
+
+.mini-flower i:nth-child(1) {
+    transform: rotate(0);
+}
+
+.mini-flower i:nth-child(2) {
+    transform: rotate(90deg);
+}
+
+.mini-flower i:nth-child(3) {
+    transform: rotate(180deg);
+}
+
+.mini-flower i:nth-child(4) {
+    transform: rotate(270deg);
+}
+
+@keyframes flowerFloat {
+
+    0%,100% {
+        transform: rotate(-4deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(5deg) translateY(-10px);
+    }
+
+}
+
+.water-ring {
+    position: absolute;
+
+    bottom: 45px;
+
+    width: 250px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(100,160,150,.2);
+
+    box-shadow:
+        0 0 0 15px rgba(150,200,190,.05),
+        0 0 0 30px rgba(150,200,190,.025);
+
+    animation: ripple 4s ease-in-out infinite;
+}
+
+@keyframes ripple {
+
+    0%,100% {
+        transform: scale(.9);
+        opacity: .4;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: .8;
+    }
+
+}
+
+.floating-bubble {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.8);
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            white,
+            rgba(200,220,235,.18)
+        );
+
+    animation: bubbleFloat 5s ease-in-out infinite;
+}
+
+.bubble-a {
+    width: 35px;
+    height: 35px;
+
+    left: 60px;
+    top: 100px;
+}
+
+.bubble-b {
+    width: 17px;
+    height: 17px;
+
+    right: 60px;
+    top: 180px;
+
+    animation-delay: 1s;
+}
+
+.bubble-c {
+    width: 12px;
+    height: 12px;
+
+    left: 90px;
+    bottom: 100px;
+
+    animation-delay: 2s;
+}
+
+@keyframes bubbleFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+
+}
+
+.cream-flower {
+    position: absolute;
+
+    right: 55px;
+    top: 75px;
+
+    font-size: 4rem;
+
+    opacity: .3;
+
+    animation: flowerFloat 5s ease-in-out infinite;
+}
+
+
+
+/* =========================================================
+   BOTANICAL SECTION
+========================================================= */
+
+.botanical-section {
+    min-height: 90vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 100px 8vw;
+
+    background:
+        linear-gradient(
+            120deg,
+            #dceee7,
+            #f4f8f4
+        );
+}
+
+.botanical-copy {
+    max-width: 580px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.botanical-copy h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(4rem, 8vw, 8rem);
+
+    line-height: .85;
+
+    font-weight: 400;
+}
+
+.botanical-copy > p:last-child {
+    max-width: 350px;
+
+    margin-top: 35px;
+
+    line-height: 1.8;
+
+    opacity: .6;
+}
+
+.giant-drop {
+    position: absolute;
+
+    width: 600px;
+    height: 760px;
+
+    border-radius: 55% 45% 55% 45%;
+
+    right: 10%;
+
+    top: 10%;
+
+    background:
+        linear-gradient(
+            130deg,
+            rgba(255,255,255,.8),
+            rgba(190,220,215,.3)
+        );
+
+    box-shadow:
+        inset 25px 0 40px rgba(255,255,255,.5),
+        30px 50px 80px rgba(70,120,105,.1);
+
+    transform: rotate(25deg);
+
+    opacity: .65;
+}
+
+.floating-leaves {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.big-leaf {
+    position: absolute;
+
+    width: 230px;
+    height: 100px;
+
+    border-radius: 100% 0 100% 0;
+
+    background:
+        linear-gradient(
+            120deg,
+            #7da797,
+            #c3ddd2
+        );
+
+    opacity: .35;
+}
+
+.leaf-1 {
+    right: 13%;
+    bottom: 15%;
+
+    transform: rotate(-25deg);
+}
+
+.leaf-2 {
+    right: 32%;
+    top: 15%;
+
+    transform: rotate(35deg) scale(.7);
+}
+
+.leaf-3 {
+    right: 4%;
+    top: 45%;
+
+    transform: rotate(60deg) scale(.8);
+}
+
+
+
+/* =========================================================
+   INGREDIENTS
+========================================================= */
+
+.ingredients {
+    padding: 150px 8vw;
+
+    background: #f8faf7;
+}
+
+.ingredient-intro h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+
+    font-weight: 400;
+
+    line-height: .9;
+}
+
+.ingredient-list {
+    margin-top: 100px;
+}
+
+.ingredient {
+    display: grid;
+
+    grid-template-columns:
+        80px 150px 1fr;
+
+    align-items: center;
+
+    gap: 40px;
+
+    padding: 45px 0;
+
+    border-top: 1px solid rgba(40,70,60,.12);
+
+    transition: .4s;
+}
+
+.ingredient:hover {
+    padding-left: 20px;
+}
+
+.ingredient-number {
+    font-size: .65rem;
+
+    opacity: .45;
+}
+
+.ingredient-visual {
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            white,
+            #e3f0eb
+        );
+
+    font-size: 2.2rem;
+}
+
+.ingredient h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 2rem;
+
+    font-weight: 400;
+}
+
+.ingredient p {
+    max-width: 400px;
+
+    margin-top: 8px;
+
+    font-size: .8rem;
+
+    line-height: 1.7;
+
+    opacity: .55;
+}
+
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final-cta {
+    min-height: 75vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #ffffff,
+            #dfeee8
+        );
+}
+
+.final-cta h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(4rem, 9vw, 9rem);
+
+    font-weight: 400;
+
+    line-height: .85;
+
+    max-width: 900px;
+}
+
+.final-cta .primary-button {
+    margin-top: 45px;
+}
+
+.final-rain {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .35;
+
+    background:
+        repeating-linear-gradient(
+            100deg,
+            transparent 0,
+            transparent 100px,
+            rgba(100,150,140,.15) 101px,
+            transparent 102px
+        );
+
+    animation: finalRain 2s linear infinite;
+}
+
+@keyframes finalRain {
+
+    from {
+        transform: translateY(-100px);
+    }
+
+    to {
+        transform: translateY(100px);
+    }
+
+}
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 70px 7vw;
+
+    background: #253b33;
+
+    color: #eef5f0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 30px;
+}
+
+.footer-logo {
+    letter-spacing: .3em;
+
+    font-weight: 600;
+}
+
+footer p {
+    max-width: 250px;
+
+    font-size: .75rem;
+
+    line-height: 1.7;
+
+    opacity: .6;
+}
+
+.footer-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    font-size: .7rem;
+
+    opacity: .7;
+}
+
+footer small {
+    grid-column: 1 / -1;
+
+    margin-top: 50px;
+
+    opacity: .35;
+
+    font-size: .6rem;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero-product {
+        right: 4%;
+
+        transform: scale(.75);
+    }
+
+    .botanical-left {
+        left: -100px;
+
+        opacity: .35;
+    }
+
+    .botanical-right {
+        right: -100px;
+
+        opacity: .35;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .product-visual {
+        height: 480px;
+    }
+
+    .section-heading {
+        flex-direction: column;
+
+        align-items: start;
+
+        gap: 30px;
+    }
+
+    .giant-drop {
+        right: -200px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 68px;
+
+        padding: 0 5vw;
+    }
+
+    .hero {
+        min-height: 850px;
+    }
+
+    .hero-content {
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero-product {
+        position: absolute;
+
+        right: 50%;
+
+        bottom: 70px;
+
+        transform:
+            translateX(50%)
+            scale(.62);
+    }
+
+    .hero-botanical {
+        opacity: .25;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .intro {
+        min-height: 70vh;
+    }
+
+    .collection {
+        padding: 100px 5vw;
+    }
+
+    .product-visual {
+        height: 420px;
+    }
+
+    .botanical-section {
+        min-height: 800px;
+
+        padding: 100px 5vw;
+    }
+
+    .giant-drop {
+        width: 420px;
+        height: 600px;
+
+        right: -220px;
+    }
+
+    .ingredients {
+        padding: 100px 5vw;
+    }
+
+    .ingredient {
+        grid-template-columns:
+            40px 80px 1fr;
+
+        gap: 15px;
+    }
+
+    .ingredient-visual {
+        width: 75px;
+        height: 75px;
+
+        font-size: 1.5rem;
+    }
+
+    .ingredient h3 {
+        font-size: 1.25rem;
+    }
+
+    .final-cta {
+        min-height: 650px;
+    }
+
+}
